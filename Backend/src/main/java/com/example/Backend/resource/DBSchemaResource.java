@@ -113,7 +113,6 @@ public class DBSchemaResource
      */
     private DBSchemaDTO getDbSchema(HashMap<String, String> request) {
         DBSchemaDTO schema = new DBSchemaDTO();
-        schema.setPlatformname(request.get("platformname"));
         schema.setName(request.get("name"));
         schema.setSqlservername(request.get("sqlservername"));
         schema.setUsername(request.get("username"));
@@ -353,43 +352,6 @@ public class DBSchemaResource
         }
         return null;
     }
-
-    /**
-     * Finds all schemas associated to a given platform URL
-     * @param platform_url url of the platform
-     * @return list of schemas that provide information to the platform with url provided on the request
-     */
-    @GetMapping("platform/url/{platformURL}")
-    public List<DBSchemaDTO> findSchemasByPlatformURL(@PathVariable("platformURL") String platform_url)
-    {
-        try{
-            String platform_decoded = URLDecoder.decode(platform_url, StandardCharsets.UTF_8);
-            return this.dbSchemaService.findDBSchemasByPlatformURL(platform_decoded);
-        } catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        return new ArrayList<>();
-    }
-
-    /**
-     * Finds all schemas associated to a given platform URL
-     * @param platformname name of the platform
-     * @return list of schemas that provide information to the platform with url provided on the request
-     */
-    @GetMapping("platform/name/{platformname}")
-    public List<DBSchemaDTO> findSchemasByPlatformName(@PathVariable("platformname") String platformname)
-    {
-        try{
-            String platform_decoded = URLDecoder.decode(platformname, StandardCharsets.UTF_8);
-            return this.dbSchemaService.findDBSchemasByPlatformName(platform_decoded);
-        } catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        return new ArrayList<>();
-    }
-
 
     /**
      * Gets all schemas by update period

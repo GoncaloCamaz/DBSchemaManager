@@ -27,10 +27,6 @@ public class DBSchema implements Serializable
     @Column(name="id_dbschema", updatable = false, nullable = false)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="platform_id", referencedColumnName = "id_platform", nullable = false)
-    private Platform platform;
-
     /**
      * unique specifies that the schema name must be unique
      */
@@ -65,10 +61,9 @@ public class DBSchema implements Serializable
     private Set<DBObject> dbObjectSet;
 
     public DBSchema(Long id, String name, String description, String servername, String updatePeriod,
-                    String conString, String user, String password, LocalDateTime update, Set<DBObject> dbObjectSet, Platform platform) {
+                    String conString, String user, String password, LocalDateTime update, Set<DBObject> dbObjectSet) {
         this.id = id;
         this.name = name;
-        this.platform = platform;
         this.connectionstring = conString;
         this.updateperiod = updatePeriod;
         this.username = user;
@@ -81,7 +76,6 @@ public class DBSchema implements Serializable
 
     public DBSchema() {
         this.name = "";
-        this.platform = new Platform();
         this.description = "";
         this.updateperiod = "";
         this.connectionstring = "";
@@ -97,7 +91,6 @@ public class DBSchema implements Serializable
         this.id = sch.getId();
         this.name = sch.getName();
         this.connectionstring = sch.getConnectionstring();
-        this.platform = sch.getPlatform();
         this.username = sch.getUsername();
         this.updateperiod = sch.getUpdateperiod();
         this.password = sch.getPassword();
@@ -138,15 +131,6 @@ public class DBSchema implements Serializable
 
     public void setDbObjectSet(Set<DBObject> dbObjectSet) {
         this.dbObjectSet = dbObjectSet;
-    }
-
-    @JsonBackReference
-    public Platform getPlatform() {
-        return platform;
-    }
-
-    public void setPlatform(Platform platform) {
-        this.platform = platform;
     }
 
     public String getSqlservername() {

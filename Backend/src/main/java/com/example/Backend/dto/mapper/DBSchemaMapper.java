@@ -17,7 +17,6 @@ public class DBSchemaMapper {
         dbSchemaDTO.setLastupdate(dbs.getLastupdate());
         dbSchemaDTO.setSqlservername(dbs.getSqlservername());
         dbSchemaDTO.setUpdateperiod(dbs.getUpdateperiod());
-        dbSchemaDTO.setPlatformname(dbs.getPlatform().getName());
         dbSchemaDTO.setDescription(dbs.getDescription());
 
         return dbSchemaDTO;

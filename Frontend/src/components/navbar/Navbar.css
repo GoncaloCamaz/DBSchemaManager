@@ -9,14 +9,11 @@
 
 .navbar-logo {
   color: #fff;
-  justify-self: start;
   cursor: pointer;
   text-decoration: none;
   position: absolute;
   padding-left: 5px;
-  top: 0;
   left: 0;
-  max-height:80px;
 }
 
 .fa-firstdraft {

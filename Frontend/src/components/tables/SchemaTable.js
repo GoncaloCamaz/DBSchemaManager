@@ -38,7 +38,6 @@ const useStyles = makeStyles(theme => ({
 
 const headCells = [
     { id: 'name', label: 'Name' },
-    { id: 'platformname',label:'Platform'},
     { id: 'sqlservername', label: 'Server' },
     { id: 'updateperiod', label: 'Update Period'},
     { id: 'lastupdate', label: 'Last Update'},
@@ -70,7 +69,6 @@ export default function SchemaTable(props) {
                     let filtered = items.filter(value => {
                         return (
                             value.name.toLowerCase().includes(target.value.toLowerCase()) ||
-                            value.platformname.toLowerCase().includes(target.value.toLowerCase()) ||
                             value.sqlservername.toString().toLowerCase().includes(target.value.toLowerCase()) ||
                             value.updateperiod.toString().toLowerCase().includes(target.value.toLowerCase())
                         );
@@ -130,7 +128,6 @@ export default function SchemaTable(props) {
                             recordsAfterPagingAndSorting().map((item, index) => {
                                 return (<TableRow key={index}>
                                     <TableCell>{item.name}</TableCell>
-                                    <TableCell>{item.platformname}</TableCell>
                                     <TableCell>{item.sqlservername}</TableCell>
                                     <TableCell>{item.updateperiod}</TableCell>
                                     <TableCell>{item.lastupdate}</TableCell>
@@ -210,7 +207,6 @@ export default function SchemaTable(props) {
                             recordsAfterPagingAndSorting().map((item, index) => {
                                 return (<TableRow key={index}>
                                             <TableCell>{item.name}</TableCell>
-                                            <TableCell>{item.platformname}</TableCell>
                                             <TableCell>{item.sqlservername}</TableCell>
                                             <TableCell>{item.updateperiod}</TableCell>
                                             <TableCell>{item.lastupdate}</TableCell>
@@ -270,7 +266,6 @@ export default function SchemaTable(props) {
                             recordsAfterPagingAndSorting().map((item, index) => {
                                 return (<TableRow key={index}>
                                             <TableCell>{item.name}</TableCell>
-                                            <TableCell>{item.platformname}</TableCell>
                                             <TableCell>{item.sqlservername}</TableCell>
                                             <TableCell>{item.updateperiod}</TableCell>
                                             <TableCell>{item.lastupdate}</TableCell>

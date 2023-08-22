@@ -10,15 +10,9 @@ import CreateViewPage from './components/pages/CreateViewPage'
 import DatabasesPage from './components/pages/DatabasesPage'
 import HomePage from './components/pages/HomePage'
 import Login from './components/pages/Login'
-import MachineAccessPage from './components/pages/MachineAccessPage'
-import MachinePage from './components/pages/MachinePage'
-import MachinesByPlatformPage from './components/pages/MachinesByPlatformPage'
 import ManagementPage from './components/pages/ManagementPage'
-import OrganizationPage from './components/pages/OrganizationPage'
 import ObjectsPage from './components/pages/ObjectsPage'
-import PlatformsByMachinePage from './components/pages/PlatformsByMachinePage'
 import ProceduresHistoryPage from './components/pages/ProceduresHistoryPage'
-import PlatformPage from './components/pages/PlatformPage'
 import SchemaPage from './components/pages/SchemaPage'
 import SchemaQueryPage from './components/pages/SchemaQueryPage'
 import UserAccountPage from './components/pages/UserAccountPage'
@@ -57,12 +51,6 @@ export default function Routes() {
         <Switch>
           <CustomRoute exact path="/" component={Login} />
           <CustomRoute isPrivate exact path='/home' component={HomePage}/>
-          <CustomRoute isPrivate exact path='/organization' component={OrganizationPage}/>
-          <CustomRoute isPrivate exact path='/organization/machines' component={MachinePage}/>
-          <CustomRoute isPrivate exact path='/organization/machines/platforms' component={PlatformsByMachinePage}/>
-          <CustomRoute isPrivate exact path='/organization/machines/access' component={MachineAccessPage}/>
-          <CustomRoute isPrivate exact path='/organization/platforms' component={PlatformPage}/>
-          <CustomRoute isPrivate exact path='/organization/platforms/machines' component={MachinesByPlatformPage}/>
           <CustomRoute isPrivate exact path='/databases' component={DatabasesPage}/>
           <CustomRoute isPrivate exact path='/databases/schemas' component={SchemaPage}/>
           <CustomRoute isPrivate exact path='/databases/schemas/query' component={SchemaQueryPage}/>

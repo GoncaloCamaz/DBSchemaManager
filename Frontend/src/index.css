@@ -24,7 +24,6 @@ body {
 
 .home, 
 .page_wrapper,
-.organization,
 .management, 
 .accounts,
 .databases, 
@@ -71,7 +70,6 @@ body {
     position: relative;
 }
 
-  .organization,
   .management,
   .views, 
   .databases{
