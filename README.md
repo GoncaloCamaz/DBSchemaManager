@@ -1,6 +1,6 @@
 # DBSchemaManager
 
-Project developed for my first job experience in 2020. 
+Project was developed in 2020. 
 
 This project consists of a system to fetch database metadata that includes:
 - Tables
