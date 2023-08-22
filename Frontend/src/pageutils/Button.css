@@ -1,0 +1,17 @@
+:root {
+    --primary: #1888ff;
+}
+
+.btn {
+    padding: 8px 20px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.btn:hover {
+    background-color: var(--primary);
+}

@@ -1,0 +1,14 @@
+<settings>
+<proxies>
+<proxy>
+    <active>false</active>
+<!-- protocolo que o proxy trabalha, http, https-->
+<protocol>http</protocol>
+    <host>@</host>
+<!-- porta de comunicacao do servidor de proxy, ex. 80, 8090, 3128-->
+<port>8080</port>
+<!-- endereços que não precisam passar pelo proxy-->
+<nonProxyHosts>localhost|www.google.com|*.somewhere.com</nonProxyHosts>
+</proxy>
+</proxies>
+</settings>

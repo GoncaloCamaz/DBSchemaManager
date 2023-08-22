@@ -1,0 +1,63 @@
+version: '3.5'
+
+services: 
+  dbschemamanager-database:
+    image: mysql:8
+    container_name: dbschemamanager-database
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 26121996
+      MYSQL_DATABASE: dbschemamanager
+    volumes:
+      - mysql-data:/home/app/data
+    networks: 
+      main:
+        aliases: 
+          - database
+    ports: 
+      - "3306"
+  dbschemamanager-backend:
+    build: 
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: dbschemamanager-backend
+    restart: always
+    depends_on: 
+      - dbschemamanager-database
+    ports:
+      - 8082:8082
+    networks: 
+      main:
+        aliases: 
+          - backend
+  dbscshemamanager-fetcher:
+    build:
+      context: ./Fetcher
+      dockerfile: Dockerfile
+    container_name: dbscshemamanager-fetcher
+    restart: always
+    ports:
+      - 8081:8081
+    networks: 
+      main:
+        aliases: 
+          - fetcher
+  dbschemamanager-fontend:
+    build: 
+      context: ./Frontend/
+      dockerfile: Dockerfile
+    container_name: dbschemamanager-fontend
+    restart: always
+    ports:
+      - 80:81
+    networks: 
+      main:
+        aliases: 
+          - frontend
+volumes:
+  mysql-data:
+    external: true
+    name: mysql-data
+networks: 
+  main:
+    

@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'azo-sans-web', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+}
+
+body {
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    background-position-x: center;
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-color: #4f60d2;
+    width: 100vw;
+  }
+  
+.is-loading {
+    color: white;
+}
+
+.home, 
+.page_wrapper,
+.organization,
+.management, 
+.accounts,
+.databases, 
+.views {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background-color: #4f60d2;
+}
+
+.home_wrapper {
+    padding-bottom: 100px;
+}
+
+.home_wrapper h1 {
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px rgb(4, 13, 51);    
+}
+
+.home_wrapper h5 {
+    color: #fff;
+    text-shadow: 2px 2px 5px rgb(4, 13, 51);
+}
+
+.form-buttons{
+    align-self: center;
+    align-content: center;
+    align-content: center;
+}
+
+@media only screen and (max-width: 960px) {
+
+    * {
+        font: optional;
+    }
+
+body {
+    overflow: auto;
+}
+
+.page_wrapper{
+    position: relative;
+}
+
+  .organization,
+  .management,
+  .views, 
+  .databases{
+      top: 10;
+      height: 100%;
+      width: 100%;
+      
+  }
+  
+  .home_wrapper h1 {
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px rgb(4, 13, 51);
+    font-size: larger;    
+}
+
+.home_wrapper h5 {
+    color: #fff;
+    text-shadow: 2px 2px 5px rgb(4, 13, 51);
+    font-size: large;
+}
+}
+
+
+.logo_wheel {
+    display: inline-block;
+    border-radius:50%;
+    animation-name: rotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+  
+.blinkText {
+    color: #fff;
+    animation: blinker 1s linear infinite;
+}
+
+.logo_wheel , .logo_wheel:before , .logo_wheel:after{
+    position:absolute;
+    display: inline-block;
+}
+
+.logo_wheel , .logo_wheel:before , .logo_wheel:after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo_wheel:before , .logo_wheel:after{
+    content:"";
+}
+
+.logo_wheel:after{
+    transform:rotate(-57deg);
+}
+
+.logo_wheel:before{
+    transform:rotate(57deg);
+}
+  
+@keyframes rotate{
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
