@@ -7,7 +7,6 @@ import { Context } from '../../context/AuthContext';
 
 function Navbar() {
     const [click, setClick] = useState(false);
-    const [dropdown_organization, setDropdownOrganization] = useState(false);
     const [dropdown_schemas, setDropdownSchemas] = useState(false);
     const [dropdown_management, setDropdownManagement] = useState(false);
     const [dropdown_account, setDropdownAccount] = useState(false);
@@ -34,26 +33,6 @@ function Navbar() {
         }
         else{
             setDropdownManagement(false)
-        }
-    };
-
-    const onMouseEnter_Organization = () => {
-        if(window.innerWidth < 960)
-        {
-            setDropdownOrganization(false)
-        }
-        else{
-            setDropdownOrganization(true)
-        }
-    };
-
-    const onMouseLeave_Organization = () => {
-        if(window.innerWidth < 960)
-        {
-            setDropdownOrganization(false)
-        }
-        else{
-            setDropdownOrganization(false)
         }
     };
 
@@ -109,13 +88,6 @@ function Navbar() {
                 </div>
                 <div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                    <li className='nav-item' onMouseEnter={onMouseEnter_Organization}
-                        onMouseLeave={onMouseLeave_Organization}>
-                        <Link to='/organization' className='nav-links' onClick={closeMobileMenu}>
-                            Organization <i className='fas fa-caret-down'/>
-                        </Link>
-                        {dropdown_organization && <Dropdown dropdownMenu='organization' />}
-                    </li>
                     <li className='nav-item' onMouseEnter={onMouseEnter_Schemas}
                         onMouseLeave={onMouseLeave_Schemas}>
                         <Link to='/databases' className='nav-links' onClick={closeMobileMenu}>
@@ -156,13 +128,6 @@ function Navbar() {
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                    <li className='nav-item' onMouseEnter={onMouseEnter_Organization}
-                        onMouseLeave={onMouseLeave_Organization}>
-                        <Link to='/organization' className='nav-links' onClick={closeMobileMenu}>
-                            Organization <i className='fas fa-caret-down'/>
-                        </Link>
-                        {dropdown_organization && <Dropdown dropdownMenu='organization' />}
-                    </li>
                     <li className='nav-item' onMouseEnter={onMouseEnter_Schemas}
                         onMouseLeave={onMouseLeave_Schemas}>
                         <Link to='/databases' className='nav-links' onClick={closeMobileMenu}>
@@ -195,13 +160,6 @@ function Navbar() {
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                    <li className='nav-item' onMouseEnter={onMouseEnter_Organization}
-                        onMouseLeave={onMouseLeave_Organization}>
-                        <Link to='/organization' className='nav-links' onClick={closeMobileMenu}>
-                            Organization <i className='fas fa-caret-down'/>
-                        </Link>
-                        {dropdown_organization && <Dropdown dropdownMenu='organization' />}
-                    </li>
                     <li className='nav-item' onMouseEnter={onMouseEnter_Schemas}
                         onMouseLeave={onMouseLeave_Schemas}>
                         <Link to='/databases' className='nav-links' onClick={closeMobileMenu}>

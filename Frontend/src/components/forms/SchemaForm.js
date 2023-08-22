@@ -24,7 +24,6 @@ const initialFValues = {
     password: '',
     updateperiod: 'Daily',
     sqlservername: 'MySQL',
-    platformname: '',
     description: '',
 }
 
@@ -52,8 +51,6 @@ export default function SchemaForm(props) {
             temp.username = fieldValues.username ? "" : "This field is required."
         if ('password' in fieldValues)
             temp.password = fieldValues.password ? "" : "This field is required."
-        if ('platformname' in fieldValues)
-            temp.platformname = fieldValues.platformname ? "" : "This field is required."
         if ('sqlservername' in fieldValues)
             temp.sqlservername = fieldValues.sqlservername ? "" : "This field is required."
         if ('updateperiod' in fieldValues)
@@ -146,14 +143,6 @@ export default function SchemaForm(props) {
                         checked={values.updateperiod}
                         items={updatePediodItems}
                         error={errors.updateperiod}
-                    />
-                    <Controls.Select
-                        name="platformname"
-                        label="Platform"
-                        value={values.platformname}
-                        onChange={handleInputChange}
-                        options={props.platforms}
-                        error={errors.platformname}
                     />
                     <div>
                         <Controls.Button

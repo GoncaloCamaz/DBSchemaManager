@@ -18,7 +18,6 @@ class SchemaPage extends Component {
         super(props)
 
         this.state = {
-            platforms: [],
             schemas: [],
             currentSchema: {},
             acknowledgePopupTitle: '',
@@ -39,21 +38,6 @@ class SchemaPage extends Component {
     
     componentDidMount() {
         this.setState({isLoaded: false})
-        const authorization = {
-            headers: {
-                Authorization: localStorage.getItem('token')
-            }
-        }
-        axios.get(backendURL + '/platform',authorization)
-        .then(response => {
-            response.data.forEach(p =>
-                this.state.platforms.push({id: p.name, value: p.name, title: p.name, label: p.name}) )
-        })
-        .catch(error => {
-            if(error)
-                this.setState({isLoaded: true, errorMessage: error.message, popupAcknowledgeOpen: true})
-        })
-
         this.schemasTableUpdate()
     }
 
@@ -145,7 +129,6 @@ class SchemaPage extends Component {
             schema = {
                 name: schema.name, 
                 connectionstring: schema.connectionstring,
-                platformname: schema.platformname, 
                 updateperiod: schema.updateperiod,
                 description: schema.description,
                 sqlservername: schema.sqlservername
@@ -371,7 +354,6 @@ class SchemaPage extends Component {
                                 <SchemaEditForm 
                                     recordForEdit ={this.state.recordForEdit}
                                     addOrEdit={this.editSchema}
-                                    platforms={this.state.platforms}
                                 />
                             </Popup>
                             <Popup 
@@ -387,10 +369,7 @@ class SchemaPage extends Component {
                                 title={'Add New schema'}
                                 openPopup={this.state.popupAddOpen}
                                 setOpenPopup={this.setOpenAddPopup}>
-                                <SchemaForm 
-                                    addOrEdit={this.addSchema}
-                                    platforms={this.state.platforms}
-                                />
+                                <SchemaForm addOrEdit={this.addSchema} />
                             </Popup>
                             <Popup 
                                 title="Do you want to remove this schema?"

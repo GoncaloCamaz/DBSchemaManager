@@ -5,8 +5,8 @@ public class RequestConstants
     /**
      * DBSchema
      */
-    public static final String[] dbschemaSaverequirements = new String[]{"name","connectionstring","sqlservername","platformname","updateperiod"};
-    public static final String[] dbschemaUpdaterequirements = new String[]{"name","sqlservername","platformname","updateperiod","connectionstring"};
+    public static final String[] dbschemaSaverequirements = new String[]{"name","connectionstring","sqlservername","updateperiod"};
+    public static final String[] dbschemaUpdaterequirements = new String[]{"name","sqlservername","updateperiod","connectionstring"};
     public static final String[] dbschemaUpdateCredentialsrequirements = new String[]{"username","password","connectionstring"};
     public static final String[] dbschemaUpdateLastUpdateTime = new String[]{"name","connectionstring"};
 
@@ -29,13 +29,6 @@ public class RequestConstants
     public static final String[] dbscriptSaveRequirements = new String[]{"code","dbSchemaName","dbObjectName"};
     public static final String[] dbscriptCheckAndSaveRequirements = new String[]{"code","dbSchemaName", "sudo", "definer"};
 
-    /**
-     * Machine
-     */
-    public static final String[] machinerequirements = new String[]{"name","machinetype"};
-    public static final String[] machineAccessRequirements = new String[]{"machinename","username","password"};
-    public static final String[] machineplataformrequirements = new String[]{"machinename","platformname"};
-    public static final String[] plataformrequirements = new String[]{"name","url"};
     public static final String[] userrequirements = new String[]{"username", "role"};
 
     /**

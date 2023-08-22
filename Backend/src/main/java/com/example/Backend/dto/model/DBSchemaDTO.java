@@ -16,7 +16,6 @@ public class DBSchemaDTO {
     private LocalDateTime lastupdate;
     private String updateperiod;
     private String description;
-    private String platformname;
 
     public DBSchemaDTO() {
     }
@@ -31,7 +30,6 @@ public class DBSchemaDTO {
         this.description = dbSchemaDTO.getDescription();
         this.updateperiod = dbSchemaDTO.getUpdateperiod();
         this.lastupdate = dbSchemaDTO.getLastupdate();
-        this.platformname = dbSchemaDTO.getPlatformname();
     }
 
     public String getName() {
@@ -96,14 +94,6 @@ public class DBSchemaDTO {
 
     public void setLastupdate(LocalDateTime lastupdate) {
         this.lastupdate = lastupdate;
-    }
-
-    public String getPlatformname() {
-        return platformname;
-    }
-
-    public void setPlatformname(String platformname) {
-        this.platformname = platformname;
     }
 
     @Override

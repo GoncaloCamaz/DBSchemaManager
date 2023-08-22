@@ -22,13 +22,9 @@ public interface DBSchemaService
 
     DBSchemaDTO findDBSchemaByConnectionString(String schema_connectionstring);
 
-    List<DBSchemaDTO> findDBSchemasByPlatformURL(String plataform_URL);
-
     List<DBSchemaDTO> findDBSchemasByUpdatePeriod(String updateperiod);
 
     DBSchemaDTO findDBSchemaByNameWithCredentials(String dbSchemaName);
 
     List<DBSchemaDTO> findDBSchemasByUpdatePeriodWithCredentials(String updateperiod);
-
-    List<DBSchemaDTO> findDBSchemasByPlatformName(String platform_decoded);
 }

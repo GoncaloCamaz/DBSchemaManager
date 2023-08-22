@@ -1,18 +1,3 @@
-export const Cards_Organization = [
-    {
-        title: 'Machines',
-        path: '/organization/machines',
-        src: 'fas fa-server',
-        text: 'Organization Machines'
-    },
-    {
-        title: 'Platforms',
-        path: '/organization/platforms',
-        src: 'fas fa-chart-line',
-        text: 'Organization Platforms'
-    }
-];
-
 export const Cards_Databases =  [
     {
         title: 'Schemas',

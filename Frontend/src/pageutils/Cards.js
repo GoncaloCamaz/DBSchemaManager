@@ -1,32 +1,10 @@
 import React from 'react'
 import CardItem from './CardItem'
 import './Cards.css'
-import { Cards_Databases, Cards_Management , Cards_Organization, Cards_Views, Cards_Accounts, Cards_Accesses } from './CardItemsInfo'
+import { Cards_Databases, Cards_Management, Cards_Views, Cards_Accounts, Cards_Accesses } from './CardItemsInfo'
 
 function Cards(props) { 
-
-    if(props.page === 'organization')
-    {
-        return (
-            <div className='cards'>
-                <div className='cards__container'>
-                    <div className='cards__wrapper'>
-                        <ul className='cards__items'>
-                            {Cards_Organization.map((item, index) => {
-                                return(
-                                    <li key = {index}>
-                                        <CardItem path={item.path} src={item.src}
-                                         title={item.title}/>
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        )
-    }
-    else if(props.page === 'databases')
+   if(props.page === 'databases')
     {
         return (
             <div className='cards'>

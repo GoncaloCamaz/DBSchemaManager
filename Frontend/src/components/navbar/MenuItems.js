@@ -1,16 +1,3 @@
-export const MenuItems_Organization = [
-    {
-        title: 'Machines',
-        path: '/organization/machines',
-        cName: 'dropdown-link'
-    },
-    {
-        title: 'Platforms',
-        path: '/organization/platforms',
-        cName: 'dropdown-link'
-    }
-];
-
 export const MenuItems_Schemas = [
     {
         title: 'Schemas',
